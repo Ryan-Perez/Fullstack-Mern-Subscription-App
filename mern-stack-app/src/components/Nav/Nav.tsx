@@ -1,13 +1,15 @@
 import { Navbar, NavItem, NavLink } from "react-bootstrap"
+import { Link } from "react-router-dom"
 
 const Nav = () => {
-    return <Navbar>
+    return (
+    <Navbar>
         <NavItem>
-            <NavLink>
+            <Link to="/" className="nav-link">
                 Home
-            </NavLink>
+            </Link>
         </NavItem>
     </Navbar>
-}
+)}
 
 export default Nav
