@@ -45,16 +45,17 @@ router.post(
         const hashedPassword = await bcrypt.hash(password, 10)
 
         const customer = await stripe.customers.create(
-            {
+        {
             email,
-        }, {
+        }, 
+        {
             apiKey: process.env.STRIPE_SECRET_KEY,
         })
         
         const newUser: any = await User.create({
             email,
             password: hashedPassword,
-            customerStripeId: customer.id,
+            stripeCustomerId: customer.id,
         })
 
         const token = await JWT.sign(
@@ -88,10 +89,10 @@ router.post("/login", async (req, res) => {
         return res.json({
             errors: [
                 {
-                    msg: "Invalids credentials"
+                    msg: "Invalids credentials",
                 }
             ],
-            data: null
+            data: null,
         })
     }
 

@@ -54,7 +54,7 @@ const ModalComponent = ({ text, variant, isSignupFlow}: ModalProps) => {
             data: {
                 id: response.data.user.id,
                 email: response.data.email,
-                customerStripeId: response.data.user.customerStripeId,
+                stripeCustomerId: response.data.user.stripeCustomerId,
             },
             loading: false,
             error: null,
