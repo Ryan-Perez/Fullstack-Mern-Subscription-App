@@ -33,7 +33,7 @@ const ModalComponent = ({ text, variant, isSignupFlow}: ModalProps) => {
         let response
 
         if(isSignupFlow){
-            const {data: signUpData} = await axios.post("http://localhost:8080/auth/signup", {
+            const {data: signUpData } = await axios.post("http://localhost:8080/auth/signup", {
                 email,
                 password
             })
@@ -47,13 +47,14 @@ const ModalComponent = ({ text, variant, isSignupFlow}: ModalProps) => {
         }
 
         if(response.errors.length){
-            setErrorMsg(response.errors[0].msg)
+            return setErrorMsg(response.errors[0].msg)
         }
 
         setState({
             data: {
                 id: response.data.user.id,
-                email: response.data. email
+                email: response.data.email,
+                customerStripeId: response.data.user.customerStripeId,
             },
             loading: false,
             error: null,
