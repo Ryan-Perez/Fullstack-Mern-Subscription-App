@@ -14,7 +14,7 @@ router.get("/", checkAuth, async (req, res) => {
         {
             customer: user?.stripeCustomerId,
             status: "all",
-            expand: ["dat.default_payment_method"]
+            expand: ["data.default_payment_method"]
         },
         {
             apiKey: process.env.STRIPE_SECRET_KEY,

@@ -136,7 +136,7 @@ router.get('/me', checkAuth, async (req, res) => {
         errors: [],
         data: {
             user: {
-                id: user._id,
+                id: user.id,
                 email: user.email,
                 stripeCustomerId: user.stripeCustomerId,
             }
