@@ -6,7 +6,7 @@ import ModalComponent from "../Modal/Modal"
 const HeroComponent = styled.header`
     padding: 5rem 0;
     height: 60vh;
-    background-image: url('https://images.unsplash.com/photo-1491555103944-7c647fd857e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');
+    background-image: url('landscape.jpg');
     background-size: cover;
     background-position: center;
 `
